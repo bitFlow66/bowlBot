@@ -12,7 +12,10 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - name: Checkout
+      uses: actions/checkout@master
+      with:
+        ssh-key: ${{secrets.REQUIREREMENTSACITION}}
     - uses: ryan-rozario/pipreqs-action-cpy@master
       with:
         # Gives the path of the project
