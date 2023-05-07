@@ -12,6 +12,8 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
+    - name: Install SSH
+      run: sudo apt-get install -y openssh-client
     - name: Checkout
       uses: actions/checkout@master
       with:
