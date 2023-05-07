@@ -12,17 +12,14 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-    - name: Install SSH
-      run: sudo apt-get install -y openssh-client
     - name: Checkout
       uses: actions/checkout@master
-      with:
-        ssh-key: ${{secrets.REQUIREREMENTSACITION}}
-    - uses: ryan-rozario/pipreqs-action-cpy@master
+    - name: Create requierements.txt
+      uses: ryan-rozario/pipreqs-action-cpy@master
       with:
         # Gives the path of the project
         PROJECT_PATH: bowlBot
         # Folder where requirements.txt has to be saved in
-        REQUIREMENT_PATH: requierements.txt
+        REQUIREMENT_PATH: ./requierements.txt
         # Name of the project to include in the commit
-        PROJECT_NAME: bowlBot # default is 
+        # PROJECT_NAME: # default is 
