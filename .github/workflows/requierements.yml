@@ -6,6 +6,8 @@ on:
       - closed
     branches:
       - master
+    paths:
+      - '**.py'
       
 jobs:
   if_merged:
