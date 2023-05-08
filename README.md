@@ -14,9 +14,9 @@ In order to contribute to this project you need to do the follwing steps:
 ```
 pip install discord python-dotenv
 ```
-5. Clone this repository
+5. Fork this repository and clone your fork
 ```
-git clone https://github.com/bitFlow66/bowlBot.git
+git clone <https://github.com/YOUR-FORK-ADDRESS.git>
 ```
 6. Create a new branch for your feature
 ```
