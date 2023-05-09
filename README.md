@@ -12,7 +12,7 @@ In order to contribute to this project you need to do the following steps:
 3. [Optional but recommended] Create a python venv in your wd and activate it
 4. Install the dependencies
 ```
-pip install discord python-dotenv
+pip install -r path/to/requirements.txt
 ```
 5. Clone this repository
 ```
