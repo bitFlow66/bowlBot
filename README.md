@@ -1,18 +1,18 @@
 # Coding Bowl training bot
 
-This bot serves the purpos of having an easy base for working together on one bot without having to much merge conflicts. Therefore it in designed in a way that modules can be simply added by inheriting from a the ModuleBase class.
+This bot serves the purpos of having an easy base for working together on one bot without having to much merge conflicts. Therefore it in designed in a way that modules can be simply added by inheriting from the ModuleBase class.
 
 
 ## Contributing
 
-In order to contribute to this project you need to do the follwing steps:
+In order to contribute to this project you need to do the following steps:
 
 1. Have python3, pip and git installed on your system
 2. Create a working directory for this project
 3. [Optional but recommended] Create a python venv in your wd and activate it
 4. Install the dependencies
 ```
-pip install discord python-dotenv
+pip install -r path/to/requirements.txt
 ```
 5. Fork this repository and clone your fork
 ```
@@ -37,7 +37,7 @@ git merge master
 ```
 git push origin <ExampleFeatureBranchName>
 ```
-11. Create a merde request from feature into master on github
+11. Create a merge request from feature into master on github
 12. Wait for approval
 
 To be a bit faster, use `git commit -a -m "change description"` when no new files need to be added.
@@ -46,18 +46,40 @@ To be a bit faster, use `git commit -a -m "change description"` when no new file
 To create a new module follow these steps:
 
 1. Create a new .py in the modules folder
-2. Import nessecary libraries
+2. Import necessary libraries
 ```
 from ModuleBase import ModuleBase
 ```
-3. Create a new class in your .py and inherite from `ModuleBase`
+3. Create a new class in your .py and inherit from `ModuleBase`
 ```
 class ModuleIndex(ModuleBase):
     def __init__(self, bot):
         self.bot = bot
 ```
-4. Add funcionality
-5. Add your module to config.json (True or False indicates wether a module gets leaded or not)
+4. Add funcionallity
+5. Add the needed `getInformation()` function with this content
+```
+@staticmethod
+    def getInformation() -> dict:
+        """
+        Some basic information for the module
+
+        Returns:
+            A dict with information on this module
+        """
+        return {
+            "author": "<author>",
+            "shortDesc": "<shortDesc>",
+            "description": "<longDesc>",
+            "commands": "command1  : <com1Desc>\n"
+                        "command2  : <com2Desc>\n"
+                        "command3  : <com3Desc>"
+        }
+
+```
+If someone wants to wrap this in a class or has a better idea, a PR is much appreciated.
+
+6. Add your module to config.json (True or False indicates wether a module gets leaded or not)
 ```
 {
   "modules" :
@@ -77,10 +99,10 @@ If your module uses other custom classes/files put them in a subfolder within th
 }
 ```
 
-For more information please refere to the `ModuleIndex` as an example.
+For more information please refer to the `ModuleIndex` as an example.
 ## Testing
 
-To test your modele/bot you need to:
+To test your module/bot you need to:
 
 1. [Creat a discord server](https://support.discord.com/hc/en-us/articles/204849977-How-do-I-create-a-server-)
 2. [Create a bot account and invite it to your server](https://discordpy.readthedocs.io/en/stable/discord.html)
@@ -97,8 +119,8 @@ python bowlMain.py
 For the sake of testing you can give your bot admin rights and activate all intents.
 ## Documentation
 
-For now there will be no docmentation for this bot. So please add the getInformation() method to your module and add docstrings.
-For an example please refere to `bowlBot/modules/ModuleIndex.py.
+For now there will be no documentation for this bot. So please add the getInformation() method to your module and add docstrings.
+For an example please refer to `bowlBot/modules/ModuleIndex.py.
 
 
 ## References
