@@ -1,6 +1,8 @@
 {
   "modules" :
     {
-      "modules.ModuleIndex" : true
+      "modules.ModuleIndex" : true,
+      "modules.echo": true,
+      "modules.search": true
     }
 }
