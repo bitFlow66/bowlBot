@@ -2,6 +2,7 @@
   "modules" :
     {
       "modules.ModuleIndex" : true,
-      "modules.echo": true
+      "modules.echo": true,
+      "modules.search": true
     }
 }
