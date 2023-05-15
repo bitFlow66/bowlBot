@@ -37,7 +37,6 @@ class ModuleIndex(ModuleBase):
             moduleName: Name of the module to get the description for
         """
         await ctx.send(self._getModule(moduleName).getInformation()["description"])
-
     @commands.command()
     async def com(self, ctx, moduleName: str):
         """
