@@ -1,6 +1,7 @@
 {
   "modules" :
     {
-      "modules.ModuleIndex" : true
+      "modules.ModuleIndex" : true,
+      "modules.mazer.Mazer" : true
     }
 }
