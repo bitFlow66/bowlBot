@@ -2,6 +2,6 @@
   "modules" :
     {
       "modules.ModuleIndex" : true,
-      "modules.gio-bot":true
+      "modules.gioBot.gio-bot":true
     }
 }
