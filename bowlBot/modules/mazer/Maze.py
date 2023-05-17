@@ -6,7 +6,7 @@ from modules.mazer.Point import Point
 
 
 class Maze:
-    def __init__(self, cellsX=20, cellsY=10, size=20):
+    def __init__(self, cellsX=20, cellsY=15, size=20):
         self.cellsX = cellsX
         self.cellsY = cellsY
         self.size = size
@@ -28,5 +28,20 @@ class Maze:
     def _generateMaze(self) -> list:
         maze = []
         for row in range(self.cellsY):
-            maze.append([Cell(self.canvas, Point(collumn * self.size, row * self.size), self.size) for collumn in range(self.cellsX)])
+            maze.append([Cell(self.canvas, row, collumn, self.size) for collumn in range(self.cellsX)])
         return maze
+
+
+
+
+    def up(self, cell: Cell):
+        pass
+
+    def down(self):
+        pass
+
+    def left(self):
+        pass
+
+    def right(self):
+        pass
