@@ -17,5 +17,5 @@ class Cell:
         }
 
     def show(self):
-        for _, wall in self._walls.items:
+        for _, wall in self._walls.items():
             wall.show()

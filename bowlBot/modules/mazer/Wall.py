@@ -13,4 +13,4 @@ class Wall:
 
     def show(self):
         if self._showWall:
-            self._canvas.line(self._start, self._end, fill=0)
+            self._canvas.line((self._start.x, self._start.y, self._end.x, self._end.y), fill=0)
