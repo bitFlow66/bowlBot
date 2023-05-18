@@ -14,7 +14,7 @@ class Cell:
         # rows = y-achsis
         _x = self._collumnPos * self._size
         _y = self._rowPos * self._size
-        self._walls = {
+        self._walls: dict[Direction, Wall] = {
             Direction.UP: Wall(self._canvas, Point(_x, _y), Point(_x + self._size, _y)),
             Direction.DOWN: Wall(self._canvas, Point(_x, _y + self._size), Point(_x + self._size, _y + self._size)),
             Direction.LEFT: Wall(self._canvas, Point(_x, _y), Point(_x, _y + self._size)),
@@ -25,6 +25,9 @@ class Cell:
         for _, wall in self._walls.items():
             wall.show()
 
+    def resetCellWalls(self):
+        for wall in self._walls.values():
+            wall.showWall = True
 
     @property
     def getWalls(self) -> dict[Direction, Wall]:
