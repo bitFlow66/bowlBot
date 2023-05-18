@@ -1,7 +1,13 @@
-from PIL import ImageDraw
+from enum import Enum
 
 from modules.mazer.Point import Point
 
+
+class Direction(Enum):
+    UP = 1
+    DOWN = 2
+    LEFT = 3
+    RIGHT = 4
 
 class Wall:
 
@@ -9,8 +15,8 @@ class Wall:
         self._canvas = canvas
         self._start = start
         self._end = end
-        self._showWall = True
+        self.showWall = True
 
     def show(self):
-        if self._showWall:
+        if self.showWall:
             self._canvas.line((self._start.x, self._start.y, self._end.x, self._end.y), fill=0)

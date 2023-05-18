@@ -1,4 +1,4 @@
-from modules.mazer.Wall import Wall
+from modules.mazer.Wall import Wall, Direction
 from modules.mazer.Point import Point
 
 
@@ -10,15 +10,30 @@ class Cell:
         self._size = size
 
         # Walls for a cell
+        # collumns = x-achsis
+        # rows = y-achsis
         _x = self._collumnPos * self._size
         _y = self._rowPos * self._size
         self._walls = {
-            "up": Wall(self._canvas, Point(_x, _y), Point(_x + self._size, _y)),
-            "down": Wall(self._canvas, Point(_x, _y + self._size), Point(_x + self._size, _y + self._size)),
-            "left": Wall(self._canvas, Point(_x, _y), Point(_x, _y + self._size)),
-            "right": Wall(self._canvas, Point(_x + self._size, _y), Point(_x + self._size, _y + self._size))
+            Direction.UP: Wall(self._canvas, Point(_x, _y), Point(_x + self._size, _y)),
+            Direction.DOWN: Wall(self._canvas, Point(_x, _y + self._size), Point(_x + self._size, _y + self._size)),
+            Direction.LEFT: Wall(self._canvas, Point(_x, _y), Point(_x, _y + self._size)),
+            Direction.RIGHT: Wall(self._canvas, Point(_x + self._size, _y), Point(_x + self._size, _y + self._size))
         }
 
     def show(self):
         for _, wall in self._walls.items():
             wall.show()
+
+
+    @property
+    def getWalls(self) -> dict[Direction, Wall]:
+        return self._walls
+
+    @property
+    def rowPos(self):
+        return self._rowPos
+
+    @property
+    def collumnPos(self):
+        return self._collumnPos

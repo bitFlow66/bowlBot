@@ -17,6 +17,7 @@ class Mazer(ModuleBase):
     def __init__(self, bot):
         self.bot = bot
         test = Maze()
+        # TODO: Make a maze turtle which takes a maze as parameter and is able to walk in the maze -> Turtle(Maze())
 
     @staticmethod
     def getInformation() -> dict:
