@@ -39,8 +39,6 @@ class Maze:
 
         self._show()
 
-        self.image.save("test.png")
-
     def _generateGrid(self) -> list[list[Cell]]:
         print("Generate Grid")
         maze = []
@@ -58,8 +56,8 @@ class Maze:
             for cell in row:
                 cell.show()
 
-    def getImageAsBytes(self) -> bytes:
-        return self.image.tobytes()
+    def getImage(self) -> Image.Image:
+        return self.image
 
     def _cellPosInList(self, cellList: list[Cell], cell: Cell) -> Optional[int]:
         if cell in cellList:
