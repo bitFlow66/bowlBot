@@ -16,9 +16,19 @@ class Cell:
         _y = self._rowPos * self._size
         self._walls: dict[Direction, Wall] = {
             Direction.UP: Wall(self._canvas, Point(_x, _y), Point(_x + self._size, _y)),
-            Direction.DOWN: Wall(self._canvas, Point(_x, _y + self._size), Point(_x + self._size, _y + self._size)),
-            Direction.LEFT: Wall(self._canvas, Point(_x, _y), Point(_x, _y + self._size)),
-            Direction.RIGHT: Wall(self._canvas, Point(_x + self._size, _y), Point(_x + self._size, _y + self._size))
+            Direction.DOWN: Wall(
+                self._canvas,
+                Point(_x, _y + self._size),
+                Point(_x + self._size, _y + self._size),
+            ),
+            Direction.LEFT: Wall(
+                self._canvas, Point(_x, _y), Point(_x, _y + self._size)
+            ),
+            Direction.RIGHT: Wall(
+                self._canvas,
+                Point(_x + self._size, _y),
+                Point(_x + self._size, _y + self._size),
+            ),
         }
 
     def show(self):

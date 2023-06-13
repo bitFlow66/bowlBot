@@ -1,4 +1,3 @@
-
 def main():
     import os
 
@@ -8,10 +7,12 @@ def main():
     from BowlBot import BowlBot
 
     load_dotenv()
-    TOKEN = os.getenv('DISCORD_TOKEN')
+    TOKEN = os.getenv("DISCORD_TOKEN")
 
     bot = BowlBot(discord.Intents.all())
 
+    if not TOKEN:
+        raise Exception("No TOKEN given")
     bot.run(TOKEN)
 
 

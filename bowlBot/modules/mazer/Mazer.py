@@ -1,6 +1,4 @@
 from ModuleBase import ModuleBase
-from discord.ext import commands
-
 from modules.mazer.Maze import Maze
 
 
@@ -16,7 +14,7 @@ class Mazer(ModuleBase):
 
     def __init__(self, bot):
         self.bot = bot
-        test = Maze()
+        maze = Maze()
         # TODO: Make a maze turtle which takes a maze as parameter and is able to walk in the maze -> Turtle(Maze())
 
     @staticmethod
@@ -25,7 +23,7 @@ class Mazer(ModuleBase):
             "author": "flow",
             "shortDesc": "Creates a maze to solve as png.",
             "description": "Creates a maze as a png that can be solved.",
-            "commands": ""
+            "commands": "",
         }
 
 
