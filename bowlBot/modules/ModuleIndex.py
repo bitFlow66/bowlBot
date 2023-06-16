@@ -24,8 +24,9 @@ class ModuleIndex(ModuleBase):
         modDesc = []
         for module in self.MODULE_REGISTRY:
             modDesc.append(
-                f"{module.__name__} - {module.getInformation()['shortDesc']}")
-        await ctx.send('\n'.join(modDesc))
+                f"{module.__name__} - {module.getInformation()['shortDesc']}"
+            )
+        await ctx.send("\n".join(modDesc))
 
     @commands.command()
     async def desc(self, ctx, moduleName: str):
@@ -59,7 +60,9 @@ class ModuleIndex(ModuleBase):
         Returns:
             Returns the module class
         """
-        return [module for module in self.MODULE_REGISTRY if module.__name__ == moduleName][0]
+        return [
+            module for module in self.MODULE_REGISTRY if module.__name__ == moduleName
+        ][0]
 
     @staticmethod
     def getInformation() -> dict:
@@ -74,8 +77,8 @@ class ModuleIndex(ModuleBase):
             "shortDesc": "List available modules",
             "description": "This module provides a way to list all registered modules and shows a description.",
             "commands": "index  : Lists all available modules\n"
-                        "desc   : Takes a module name as parameter and returns a long description\n"
-                        "com    : Takes a module name and returns a list with all available commands"
+            "desc   : Takes a module name as parameter and returns a long description\n"
+            "com    : Takes a module name and returns a list with all available commands",
         }
 
 
