@@ -1,7 +1,12 @@
 {
-  "modules" :
-    {
-      "modules.ModuleIndex" : true,
-      "modules.echo": true
-    }
+   "modules":{
+      "modules.ModuleIndex":{
+         "enable":true,
+         "logLevel":30
+      },
+      "modules.Echo":{
+         "enable":true,
+         "logLevel":30
+      }
+   }
 }

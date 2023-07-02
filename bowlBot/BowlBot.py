@@ -4,12 +4,10 @@ import os
 
 
 class BowlBot(commands.Bot):
-
     def __init__(self, intents):
         super().__init__(command_prefix="!", intents=intents)
 
     async def on_ready(self):
-
         await self.loadModules()
 
         print("Bot is ready!")
@@ -20,6 +18,6 @@ class BowlBot(commands.Bot):
         """
         file = open("config.json")
         moduleDict = json.load(file)
-        for module, condition in moduleDict["modules"].items():
-            if condition:
+        for module, conditions in moduleDict["modules"].items():
+            if conditions["enable"]:
                 await self.load_extension(module)
