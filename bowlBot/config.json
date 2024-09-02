@@ -2,6 +2,7 @@
   "modules" :
     {
       "modules.ModuleIndex" : true,
-      "modules.mazer.Mazer" : true
+      "modules.echo": true,
+      "modules.mazer.Mazer" : true,
     }
 }
