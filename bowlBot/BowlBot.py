@@ -4,12 +4,10 @@ import os
 
 
 class BowlBot(commands.Bot):
-
     def __init__(self, intents):
         super().__init__(command_prefix="!", intents=intents)
 
     async def on_ready(self):
-
         await self.loadModules()
 
         print("Bot is ready!")
